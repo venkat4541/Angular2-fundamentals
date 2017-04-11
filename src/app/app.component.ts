@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
   <div>
-  <app-simple-form></app-simple-form>
+  <ul>
+    <li *ngFor="let message of mail.message">
+      {{ message }}
+    </li>
+  </ul>
   </div>
   `,
   // templateUrl: './app.component.html',
@@ -12,4 +16,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Lets get started!';
+
+  constructor(
+    @Inject('mail') private mail,
+  ) {
+
+  }
 }

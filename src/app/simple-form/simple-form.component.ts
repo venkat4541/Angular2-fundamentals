@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <div>
     <input #myInput type="text">
-    <button (mouseover)="onClick($event, myInput.value)">Click me!</button>
+    <button (onClick)="onClick($event, myInput.value)">Click me!</button>
   </div>
   `,
   styles: []
